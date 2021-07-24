@@ -1,0 +1,5 @@
+name: BlueDebrisCore
+version: BETA
+main: me.liamhbest.core.BlueDebrisCore
+authors: ["LiamHBest", "Blue Debris Development Team"]
+description: Custom made core for Blue Debris.
