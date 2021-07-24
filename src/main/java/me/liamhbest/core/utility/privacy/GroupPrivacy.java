@@ -1,10 +1,9 @@
 package me.liamhbest.core.utility.privacy;
 
-public enum FriendPrivacy {
+public enum GroupPrivacy {
 
     ALL,
     PARTY,
-    GROUP,
     FRIENDS,
     NONE;
 

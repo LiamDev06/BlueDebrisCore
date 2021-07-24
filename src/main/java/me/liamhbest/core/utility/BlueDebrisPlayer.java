@@ -5,6 +5,7 @@ import me.liamhbest.core.data.DataSystem;
 import me.liamhbest.core.data.PlayerDataList;
 import me.liamhbest.core.friends.FriendsManager;
 import me.liamhbest.core.rank.RankManager;
+import me.liamhbest.core.utility.privacy.PrivacyManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -23,11 +24,15 @@ public class BlueDebrisPlayer {
     @Getter
     private final FriendsManager friendsManager;
 
+    @Getter
+    private final PrivacyManager privacyManager;
+
     public BlueDebrisPlayer(OfflinePlayer offlinePlayer){
         this.offlinePlayer = offlinePlayer;
         this.rankManager = new RankManager(offlinePlayer);
         this.metadataManager = new MetadataManager(offlinePlayer);
         this.friendsManager = new FriendsManager(offlinePlayer);
+        this.privacyManager = new PrivacyManager(offlinePlayer);
     }
 
     public Player getPlayer(){

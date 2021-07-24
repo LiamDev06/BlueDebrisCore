@@ -4,6 +4,9 @@ import me.liamhbest.core.BlueDebrisCore;
 import me.liamhbest.core.rank.PlayerRank;
 import me.liamhbest.core.utility.ChatChannel;
 import me.liamhbest.core.utility.privacy.FriendPrivacy;
+import me.liamhbest.core.utility.privacy.GroupPrivacy;
+import me.liamhbest.core.utility.privacy.MessagesPrivacy;
+import me.liamhbest.core.utility.privacy.PartyPrivacy;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -14,6 +17,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class DataSystem implements Listener {
 
@@ -29,12 +33,19 @@ public class DataSystem implements Listener {
         if (!playerDataFile.exists()) {
             playerDataConfig.set("uuid", player.getUniqueId().toString());
             playerDataConfig.set("firstLogin", System.currentTimeMillis());
+
             playerDataConfig.set("rank.currentRank", PlayerRank.MEMBER.name());
             playerDataConfig.set("rank.storingRank", "");
+
             playerDataConfig.set("data.networkLevel", 1);
             playerDataConfig.set("data.networkEXP", 0);
             playerDataConfig.set("data.chat_channel", ChatChannel.ALL.name());
-            playerDataConfig.set("privacy.friends", FriendPrivacy.ALL.name());
+
+            playerDataConfig.set("privacy.friends", new ArrayList<FriendPrivacy>().add(FriendPrivacy.ALL));
+            playerDataConfig.set("privacy.group", new ArrayList<GroupPrivacy>().add(GroupPrivacy.ALL));
+            playerDataConfig.set("privacy.party", new ArrayList<PartyPrivacy>().add(PartyPrivacy.ALL));
+            playerDataConfig.set("privacy.messages", new ArrayList<MessagesPrivacy>().add(MessagesPrivacy.ALL));
+
             playerDataConfig.set("staff.buildmode", false);
             playerDataConfig.set("staff.notifymode", false);
         }

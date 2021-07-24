@@ -128,25 +128,6 @@ public class FriendsManager {
         }
     }
 
-
-    public FriendPrivacy getFriendsPrivacy(){
-        File file = new File(BlueDebrisCore.instance.getDataFolder() + "/PlayerData", offlinePlayer.getUniqueId().toString() + ".yml");
-        FileConfiguration configuration = YamlConfiguration.loadConfiguration(file);
-        return FriendPrivacy.valueOf(configuration.getString("privacy.friends"));
-    }
-
-    public void setFriendsPrivacy(FriendPrivacy friendsPrivacy){
-        File file = new File(BlueDebrisCore.instance.getDataFolder() + "/PlayerData", offlinePlayer.getUniqueId().toString() + ".yml");
-        FileConfiguration configuration = YamlConfiguration.loadConfiguration(file);
-        configuration.set("privacy.friends", friendsPrivacy.name());
-
-        try {
-            configuration.save(file);
-        } catch (IOException exception){
-            exception.printStackTrace();
-        }
-    }
-
 }
 
 

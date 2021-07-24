@@ -300,7 +300,7 @@ public class FriendsCommand extends Command {
         }
 
         boolean canSendFriendRequest = false;
-        if (targetBluePlayer.getFriendsManager().getFriendsPrivacy() == FriendPrivacy.ALL) {
+        if (targetBluePlayer.getPrivacyManager().getFriendsPrivacy().contains(FriendPrivacy.ALL)) {
             canSendFriendRequest = true;
         }
 
