@@ -1,0 +1,10 @@
+/gmc
+/gms
+/gma
+/gmsp
+/buildworld
+/item
+/lobby
+/settings
+/rank
+/friend

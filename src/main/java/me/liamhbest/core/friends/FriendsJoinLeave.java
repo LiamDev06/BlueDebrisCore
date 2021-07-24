@@ -37,7 +37,7 @@ public class FriendsJoinLeave implements Listener {
                 Player targetPlayer = Bukkit.getPlayer(UUID.fromString(s));
                 targetPlayer.sendMessage(CC.translate("&a&l>> &fYour friend " +
                         blueDebrisPlayer.getRankManager().getRank().getPrefixWithSpace() +
-                        player.getName() + " &fjoined the network!")
+                        player.getName() + " &fjoined the server!")
                 );
 
             } catch (NullPointerException ignored){
@@ -57,7 +57,7 @@ public class FriendsJoinLeave implements Listener {
                 Player targetPlayer = Bukkit.getPlayer(UUID.fromString(s));
                 targetPlayer.sendMessage(CC.translate("&a&l>> &fYour friend " +
                         blueDebrisPlayer.getRankManager().getRank().getPrefixWithSpace() +
-                        player.getName() + " &fleft the network!")
+                        player.getName() + " &fleft the server!")
                 );
 
             } catch (NullPointerException ignored){

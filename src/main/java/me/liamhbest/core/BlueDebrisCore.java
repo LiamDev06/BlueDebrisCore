@@ -5,6 +5,7 @@ import lombok.SneakyThrows;
 import me.liamhbest.core.commands.BuildWorldCommand;
 import me.liamhbest.core.commands.ItemCommand;
 import me.liamhbest.core.commands.LobbyCommand;
+import me.liamhbest.core.commands.settings.SettingsCommand;
 import me.liamhbest.core.commands.gmcommands.GmaCommand;
 import me.liamhbest.core.commands.gmcommands.GmcCommand;
 import me.liamhbest.core.commands.gmcommands.GmsCommand;
@@ -61,6 +62,7 @@ public final class BlueDebrisCore extends JavaPlugin {
         commandMap.register(pluginName, new ItemCommand());
         commandMap.register(pluginName, new BuildWorldCommand());
         commandMap.register(pluginName, new LobbyCommand());
+        commandMap.register(pluginName, new SettingsCommand());
 
         commandMap.register(pluginName, new GmcCommand());
         commandMap.register(pluginName, new GmsCommand());
